@@ -1,0 +1,149 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ff3cac, #784ba0, #2b86c5, #00ffea);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+}
+
+
+.container {
+  background: rgba(0,0,0,0.3);
+  padding: 60px 40px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 60px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 10;
+  animation: popIn 1s ease forwards;
+}
+
+
+h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px #fff, 0 0 30px #ff3cac;
+  animation: glowText 2s ease infinite alternate;
+}
+
+p {
+  font-size: 22px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+
+ul {
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+ul li {
+  font-size: 18px;
+  margin: 12px 0;
+  text-align: left;
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background: linear-gradient(45deg, #ff3cac, #784ba0, #2b86c5);
+  background-size: 200% 200%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  transition: all 0.4s ease;
+  animation: buttonGlow 2.5s ease infinite;
+}
+
+.btn:hover {
+  transform: scale(1.1) rotate(-1deg);
+  box-shadow: 0 0 40px #fff, 0 0 60px #ff3cac;
+}
+
+
+footer {
+  margin-top: 50px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
+.floating-blobs .blob {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: floatBlob 20s infinite;
+}
+
+.footer {
+    font-weight: 900;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.floating-blobs .blob:nth-child(1) {
+  top: -100px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+.floating-blobs .blob:nth-child(2) {
+  bottom: -120px;
+  right: -200px;
+  animation-delay: 5s;
+}
+
+.floating-blobs .blob:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  animation-delay: 10s;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+@keyframes glowText {
+  0% {text-shadow: 0 0 20px #fff, 0 0 30px #ff3cac;}
+  100% {text-shadow: 0 0 40px #fff, 0 0 60px #2b86c5;}
+}
+
+@keyframes buttonGlow {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+@keyframes popIn {
+  0% {opacity: 0; transform: scale(0.5);}
+  100% {opacity: 1; transform: scale(1);}
+}
+
+@keyframes floatBlob {
+  0% {transform: translate(0,0);}
+  50% {transform: translate(100px,-50px);}
+  100% {transform: translate(0,0);}
+}
